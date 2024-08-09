@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name             = 'GoogleSignIn'
+  s.name             = 'GoogleSignIn-custom-nonce'
   s.version          = '7.2.0'
   s.summary          = 'Enables iOS apps to sign in with Google.'
   s.description      = <<-DESC
@@ -9,7 +9,7 @@ The Google Sign-In SDK allows users to sign in with their Google account from th
   s.license          = { :type => 'Apache', :file => 'LICENSE' }
   s.authors          = 'Google LLC'
   s.source           = {
-    :git => 'https://github.com/google/GoogleSignIn-iOS.git',
+    :git => 'https://github.com/GNUGradyn/GoogleSignIn-iOS.git',
     :tag => s.version.to_s
   }
   s.swift_version = '4.0'
@@ -46,17 +46,4 @@ The Google Sign-In SDK allows users to sign in with their Google account from th
     'DEFINES_MODULE' => 'YES',
     'COMBINE_HIDPI_IMAGES' => 'NO'
   }
-  s.test_spec 'unit' do |unit_tests|
-    unit_tests.platforms = {
-      :ios => ios_deployment_target,
-      :osx => osx_deployment_target
-    }
-    unit_tests.source_files = [
-      'GoogleSignIn/Tests/Unit/**/*.[mh]',
-    ]
-    unit_tests.requires_app_host = true
-    unit_tests.dependency 'OCMock'
-    unit_tests.dependency 'GoogleUtilities/MethodSwizzler', '~> 7.13'
-    unit_tests.dependency 'GoogleUtilities/SwizzlerTestHelpers', '~> 7.13'
-  end
 end

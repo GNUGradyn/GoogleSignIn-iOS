@@ -28,14 +28,4 @@ Pod::Spec.new do |s|
   s.resource_bundles = {
     'GoogleSignInSwiftSupport_Privacy' => 'GoogleSignInSwift/Sources/Resources/PrivacyInfo.xcprivacy'
   }
-  s.test_spec 'unit' do |unit_tests|
-    unit_tests.platforms = {
-      :ios => ios_deployment_target,
-      :osx => macos_deployment_target,
-    }
-    unit_tests.source_files = [
-      'GoogleSignInSwift/Tests/Unit/*.swift',
-    ]
-    unit_tests.requires_app_host = true
-  end
 end
